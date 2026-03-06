@@ -25,5 +25,17 @@ export type { ProgressProps } from './components/Progress'
 export { Textarea } from './components/Textarea'
 export type { TextareaProps } from './components/Textarea'
 
+export { Avatar } from './components/Avatar'
+export type { AvatarProps, AvatarSize, PresenceStatus } from './components/Avatar'
+
+export { LoadingSpinner } from './components/LoadingSpinner'
+export type { LoadingSpinnerProps, SpinnerSize } from './components/LoadingSpinner'
+
+export { EmptyState } from './components/EmptyState'
+export type { EmptyStateProps } from './components/EmptyState'
+
+export { ErrorBoundary } from './components/ErrorBoundary'
+export type { ErrorBoundaryProps } from './components/ErrorBoundary'
+
 // Utilities
 export { cn } from './lib/utils'
