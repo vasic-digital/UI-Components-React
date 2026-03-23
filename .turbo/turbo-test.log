@@ -1,0 +1,39 @@
+
+> @vasic-digital/ui-components@1.0.0 test
+> vitest run
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v2.1.9 /run/media/milosvasic/DATA4TB/Projects/Bear-Messenger/modules/ui-components-react
+
+ ✓ src/components/__tests__/Switch.test.tsx (13 tests) 690ms
+ ✓ src/__tests__/Button.test.tsx (17 tests) 1661ms
+   ✓ Button > renders with default props 505ms
+   ✓ Button > handles click events 344ms
+ ✓ src/components/__tests__/Progress.test.tsx (12 tests) 475ms
+   ✓ Progress > renders with required value prop 359ms
+ ✓ src/__tests__/Input.test.tsx (15 tests) 778ms
+ ✓ src/components/__tests__/Tabs.test.tsx (21 tests) 1326ms
+ ✓ src/__tests__/Card.test.tsx (35 tests) 1799ms
+   ✓ Card > Card Composition > renders nested content correctly 602ms
+ ✓ src/components/__tests__/Select.test.tsx (12 tests) 1770ms
+   ✓ Select > renders with options prop 1026ms
+   ✓ Select > calls onChange when selection changes 414ms
+ ✓ src/components/__tests__/ErrorBoundary.test.tsx (5 tests) 1303ms
+   ✓ ErrorBoundary > renders children when no error 426ms
+   ✓ ErrorBoundary > renders default fallback on error 378ms
+ ✓ src/__tests__/utils.test.ts (8 tests) 6ms
+ ✓ src/__tests__/index.test.ts (3 tests) 16ms
+ ✓ src/components/__tests__/Avatar.test.tsx (7 tests) 311ms
+ ✓ src/components/__tests__/Badge.test.tsx (11 tests) 242ms
+ ✓ src/components/__tests__/Textarea.test.tsx (13 tests) 1608ms
+   ✓ Textarea > renders with default props 671ms
+   ✓ Textarea > handles text input 693ms
+ ✓ src/components/__tests__/EmptyState.test.tsx (5 tests) 149ms
+ ✓ src/components/__tests__/LoadingSpinner.test.tsx (5 tests) 151ms
+
+ Test Files  15 passed (15)
+      Tests  182 passed (182)
+   Start at  14:30:09
+   Duration  15.84s (transform 1.68s, setup 5.71s, collect 11.77s, tests 12.28s, environment 39.03s, prepare 12.48s)
+
