@@ -16,12 +16,22 @@ const TabsContext = React.createContext<TabsContextValue>({})
 /*  Tabs (root)                                                       */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Props for the Tabs root component.
+ */
 export interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Initial active tab value for uncontrolled mode. */
   defaultValue?: string
+  /** Active tab value for controlled mode. */
   value?: string
+  /** Called when the active tab changes. */
   onValueChange?: (value: string) => void
 }
 
+/**
+ * Root container for a tabbed interface. Supports both controlled and
+ * uncontrolled modes. Compose with TabsList, TabsTrigger, and TabsContent.
+ */
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ className, defaultValue, value: controlledValue, onValueChange, children, ...props }, ref) => {
     const [internalValue, setInternalValue] = React.useState(defaultValue ?? '')
@@ -53,8 +63,10 @@ Tabs.displayName = 'Tabs'
 /*  TabsList                                                          */
 /* ------------------------------------------------------------------ */
 
+/** Props for the TabsList component. */
 export interface TabsListProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+/** Horizontal container for TabsTrigger buttons with a shared background. */
 const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>(
   ({ className, children, ...props }, ref) => (
     <div
@@ -76,10 +88,15 @@ TabsList.displayName = 'TabsList'
 /*  TabsTrigger                                                       */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Props for the TabsTrigger component.
+ */
 export interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Value that identifies this tab; matched against the active tab value. */
   value: string
 }
 
+/** Button that activates its associated TabsContent panel when clicked. */
 const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
   ({ className, value, children, onClick, ...props }, ref) => {
     const context = React.useContext(TabsContext)
@@ -119,10 +136,15 @@ TabsTrigger.displayName = 'TabsTrigger'
 /*  TabsContent                                                       */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Props for the TabsContent component.
+ */
 export interface TabsContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Value that identifies this panel; rendered only when it matches the active tab. */
   value: string
 }
 
+/** Panel that renders its children only when its value matches the active tab. */
 const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
   ({ className, value, children, ...props }, ref) => {
     const context = React.useContext(TabsContext)

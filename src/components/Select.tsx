@@ -1,19 +1,34 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Represents a single option within a Select dropdown.
+ */
 export interface SelectOption {
   value: string
   label: string
 }
 
+/**
+ * Props for the Select component.
+ */
 export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'onChange'> {
+  /** Called with the new value when the selection changes. */
   onChange?: (value: string) => void
+  /** Alternative callback name for value changes (same behavior as onChange). */
   onValueChange?: (value: string) => void
+  /** Array of options; renders option elements automatically. */
   options?: SelectOption[]
+  /** Optional label displayed above the select. */
   label?: string
+  /** Error message displayed below the select; also applies error styling. */
   error?: string
 }
 
+/**
+ * Styled dropdown select with optional label, error message, and custom
+ * chevron indicator. Accepts options as a prop array or as children.
+ */
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ className, children, options, onChange, onValueChange, label, error, ...props }, ref) => {
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

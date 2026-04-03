@@ -1,11 +1,20 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Props for the Switch component.
+ */
 export interface SwitchProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
+  /** Whether the switch is in the on position. */
   checked?: boolean
+  /** Called with the new checked state when toggled. */
   onCheckedChange?: (checked: boolean) => void
 }
 
+/**
+ * Toggle switch control with accessible role="switch" and animated knob.
+ * Supports disabled state and dark mode.
+ */
 const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
   ({ className, checked = false, onCheckedChange, disabled, ...props }, ref) => {
     const handleToggle = () => {

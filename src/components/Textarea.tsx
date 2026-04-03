@@ -1,11 +1,20 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Props for the Textarea component.
+ */
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Optional label displayed above the textarea. */
   label?: string
+  /** Error message displayed below the textarea; also applies error styling. */
   error?: string
 }
 
+/**
+ * Styled multi-line text input with optional label and error message.
+ * Supports dark mode and all standard HTML textarea attributes.
+ */
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, label, error, disabled, ...props }, ref) => {
     return (

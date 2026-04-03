@@ -1,9 +1,14 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/** Visual style variant for the Badge component. */
 export type BadgeVariant = 'default' | 'secondary' | 'destructive' | 'outline'
 
+/**
+ * Props for the Badge component.
+ */
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /** Visual style variant (default: 'default'). */
   variant?: BadgeVariant
 }
 
@@ -16,6 +21,10 @@ const variantClasses: Record<BadgeVariant, string> = {
 
 const baseClasses = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium'
 
+/**
+ * Inline badge label with color-coded variants for status indicators,
+ * tags, and category labels. Supports dark mode.
+ */
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant = 'default', ...props }, ref) => {
     return (
