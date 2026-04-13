@@ -1,12 +1,21 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/** Visual style variant for the Button component. */
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'
+
+/** Size preset for the Button component. */
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
+/**
+ * Props for the Button component.
+ */
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Visual style variant (default: 'primary'). */
   variant?: ButtonVariant
+  /** Size preset (default: 'md'). */
   size?: ButtonSize
+  /** Shows a spinner and disables the button when true. */
   loading?: boolean
 }
 
@@ -27,6 +36,10 @@ const sizeClasses: Record<ButtonSize, string> = {
 const baseClasses =
   'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
 
+/**
+ * Multi-variant button with size presets, loading state with spinner,
+ * focus ring, and dark mode support.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', loading, children, disabled, ...props }, ref) => {
     return (

@@ -1,6 +1,10 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Container card with rounded border, shadow, and dark mode support.
+ * Compose with CardHeader, CardTitle, CardDescription, CardContent, and CardFooter.
+ */
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -16,6 +20,7 @@ const Card = React.forwardRef<
 ))
 Card.displayName = 'Card'
 
+/** Header section of a Card with vertical spacing and padding. */
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -28,6 +33,7 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = 'CardHeader'
 
+/** Title heading within a CardHeader. */
 const CardTitle = React.forwardRef<
   HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -43,6 +49,7 @@ const CardTitle = React.forwardRef<
 ))
 CardTitle.displayName = 'CardTitle'
 
+/** Descriptive subtitle text within a CardHeader. */
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -55,6 +62,7 @@ const CardDescription = React.forwardRef<
 ))
 CardDescription.displayName = 'CardDescription'
 
+/** Main content area of a Card with horizontal padding. */
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -63,6 +71,7 @@ const CardContent = React.forwardRef<
 ))
 CardContent.displayName = 'CardContent'
 
+/** Footer area of a Card with horizontal flex layout. */
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

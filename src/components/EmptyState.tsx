@@ -1,13 +1,24 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Props for the EmptyState component.
+ */
 export interface EmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Heading text for the empty state. */
   title: string
+  /** Optional descriptive text below the title. */
   description?: string
+  /** Optional icon or illustration rendered above the title. */
   icon?: React.ReactNode
+  /** Optional action element (e.g., a button) rendered below the description. */
   action?: React.ReactNode
 }
 
+/**
+ * Centered placeholder for views with no content. Displays an optional icon,
+ * title, description, and call-to-action element.
+ */
 const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
   ({ title, description, icon, action, className, ...props }, ref) => {
     return (

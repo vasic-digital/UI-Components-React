@@ -1,13 +1,23 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/** Size preset for the Avatar component. */
 export type AvatarSize = 'sm' | 'md' | 'lg' | 'xl'
+
+/** Online presence indicator status. */
 export type PresenceStatus = 'online' | 'away' | 'busy' | 'offline'
 
+/**
+ * Props for the Avatar component.
+ */
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** User's display name (used for initials fallback and alt text). */
   name: string
+  /** Size preset (default: 'md'). */
   size?: AvatarSize
+  /** Optional image URL; falls back to initials when omitted. */
   imageUrl?: string
+  /** Optional presence indicator dot displayed at the bottom-right corner. */
   presence?: PresenceStatus
 }
 
@@ -41,6 +51,10 @@ function getInitials(name: string): string {
     .toUpperCase()
 }
 
+/**
+ * Circular avatar displaying a user's photo or generated initials.
+ * Supports multiple sizes and an optional colored presence indicator dot.
+ */
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   ({ name, size = 'md', imageUrl, presence, className, ...props }, ref) => {
     return (

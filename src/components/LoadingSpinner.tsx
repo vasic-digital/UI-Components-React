@@ -1,10 +1,16 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/** Size preset for the LoadingSpinner component. */
 export type SpinnerSize = 'sm' | 'md' | 'lg'
 
+/**
+ * Props for the LoadingSpinner component.
+ */
 export interface LoadingSpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Spinner size preset (default: 'md'). */
   size?: SpinnerSize
+  /** Optional visible label rendered below the spinner. */
   label?: string
 }
 
@@ -14,6 +20,10 @@ const sizeClasses: Record<SpinnerSize, string> = {
   lg: 'h-12 w-12 border-3',
 }
 
+/**
+ * Animated circular spinner with an accessible "Loading..." screen-reader label.
+ * Optionally displays a visible text label below the spinner.
+ */
 const LoadingSpinner = React.forwardRef<HTMLDivElement, LoadingSpinnerProps>(
   ({ size = 'md', label, className, ...props }, ref) => {
     return (

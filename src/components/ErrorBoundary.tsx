@@ -1,10 +1,17 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Props for the ErrorBoundary component.
+ */
 export interface ErrorBoundaryProps {
+  /** Child components to render while no error has been caught. */
   children: React.ReactNode
+  /** Custom fallback UI to render when an error is caught. */
   fallback?: React.ReactNode
+  /** Callback invoked when an error is caught, receiving the error and component stack. */
   onError?: (error: Error, errorInfo: React.ErrorInfo) => void
+  /** Optional CSS class applied to the default error alert container. */
   className?: string
 }
 
@@ -13,6 +20,11 @@ interface ErrorBoundaryState {
   error: Error | null
 }
 
+/**
+ * React class component that catches JavaScript errors in its child tree and
+ * renders a fallback UI instead of crashing. Supports a custom fallback prop
+ * and an onError callback for error reporting.
+ */
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props)

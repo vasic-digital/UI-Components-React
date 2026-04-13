@@ -1,12 +1,22 @@
 import React from 'react'
 import { cn } from '../lib/utils'
 
+/**
+ * Props for the Progress component.
+ */
 export interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Current progress value. */
   value: number
+  /** Maximum value (default: 100). */
   max?: number
+  /** Whether to show a percentage label above the bar. */
   showLabel?: boolean
 }
 
+/**
+ * Horizontal progress bar with optional percentage label. Uses an
+ * ARIA progressbar role for accessibility.
+ */
 const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
   ({ className, value, max = 100, showLabel = false, ...props }, ref) => {
     const percentage = Math.min(100, Math.max(0, (value / max) * 100))
