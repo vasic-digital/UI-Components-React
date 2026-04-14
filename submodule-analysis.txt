@@ -1,0 +1,8 @@
+Commit: 65b876b0450ad892dff29031ed8b0874d4e9f542
+Branch: main
+65b876b Merge remote-tracking branch 'gitlab/main'
+1bfdda1 Add GitHub Sponsors button for vasic-digital
+5411173 security: Add mandatory NO SUDO/ROOT execution constraint
+eeb021e docs: add JSDoc to all exported components and hooks
+161a895 docs: add ARCHITECTURE.md, doc.go, tests, .env gitignore for v2.1.0
+
