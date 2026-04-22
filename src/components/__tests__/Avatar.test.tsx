@@ -29,12 +29,12 @@ describe('Avatar', () => {
 
   it('applies size classes', () => {
     const { container } = render(<Avatar name="John" size="lg" />)
-    expect(container.firstChild?.className).toContain('h-12')
+    expect((container.firstChild as HTMLElement)?.className).toContain('h-12')
   })
 
   it('accepts className prop', () => {
     const { container } = render(<Avatar name="John" className="my-custom" />)
-    expect(container.firstChild?.className).toContain('my-custom')
+    expect((container.firstChild as HTMLElement)?.className).toContain('my-custom')
   })
 
   it('forwards ref', () => {
