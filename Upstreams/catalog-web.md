@@ -1,9 +1,9 @@
 # Upstream: catalog-web
 
-This component library was extracted from the Catalogizer project's web frontend.
+This component library was extracted from the parent project's web frontend.
 
 ## Source
-- Repository: Catalogizer
+- Repository: the parent project
 - Path: `catalog-web/src/components/ui/`
 - Components: Button, Card, Input, Badge, Select, Switch, Tabs, Progress, Textarea
 
